@@ -30,20 +30,20 @@ KNoT VirtualThing-LoRaWAN add to the ChirpStack App Server a new integration tha
             - [application_server.integration.knot.devices.config.schema] and [application_server.integration.knot.devices.config.event] More informarion about KNoT device config values, go to: https://knot-devel.cesar.org.br/doc/thing/unit-type-value.html?highlight=value%20type
     - On the file docker-compose.yml you will find the information about all the services including the subnetwork used on this compose, you can change it if you wanted on the section networks: lora: ipam: config: - subnet: 
     - **Important**, to run the knot-lorawan-service you need to upload or build the knot-chirpstack-app image as you can see on the section **chirpstack-application-server**. 
-- To send data to the KNoT cloud, the device decoder has to follow a return format: The decode must return an OBJ with a data array as follow: 
+- To send data to the KNoT cloud, the device decode has to follow a return format: The decode must return an OBJ with a data array as follow: 
 
 ```json
     {
         "data": [
             {
-                "name": "temperature",
-                "sensorId": 2,
-                "value": 26.9
+                "sensorId": 1,
+                "value": 77.5,
+                "timestamp": "2022-12-20T13:40:33.0-0300"
             },
             {
-                "name": "humidity",
-                "sensorId": 1,
-                "value": 77.5
+                "sensorId": 2,
+                "value": 26.9,
+                "timestamp": "2022-12-20T13:40:33.0-0300"
             }
         ]
     }
